@@ -9,26 +9,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 
     <title>Welcome</title>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Welcome</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <div class="row" style="height: 80vh;">
         <div class="col-sm-12 my-auto" style="text-align: center;">
             <p class="about">
@@ -47,19 +33,19 @@
             <div class="container" style="padding: 0 20%;">
                 <h1>Technology</h1>
                 <br>
-                <h4 style="color: blue;">NLP & ML</h4>
+                <h4 style="color: rgb(255, 0, 221);">NLP & ML</h4>
                 <ul>
                     <li>nltk (Text Processing) </li>
                     <li>Naive Bayes (ML algorithm) </li>
                     <li>Some more external library like pandas, numpy, sklearn</li>
                 </ul>
                 <br>
-                <h4 style="color: blue;">Web Technology</h4>
+                <h4 style="color: rgb(255, 0, 221);">Web Technology</h4>
                 <ul>
                     <li>Flask</li>
                 </ul>
                 <br>
-                <h4 style="color: blue;">Others</h4>
+                <h4 style="color: rgb(255, 0, 221);">Others</h4>
                 <ul>
                     <li>Pickle (Connecting and Storing model)</li>
                 </ul>
@@ -140,18 +126,17 @@
             <p>Contact Developer</p>
         </div>
     </div>
-        
-        <div class="row fl" style="height: 70px;">
-            <div class="col cent">
-                <a href="https://www.facebook.com/profile.php?id=100008888882996"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="facebook" class="icon"></a>
-            </div>
-            <div class="col cent">
-                <a href="https://www.instagram.com/roybiplabofficial/"><img src="{{ url_for('static', filename='images/instagram-512.png') }}" alt="instagram" class="icon"></a>
-            </div>
-            <div class="col cent">
-                <a href="https://www.linkedin.com/in/biplab-roy-4b63b316a/"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="linkedin" class="icon"></a>
-            </div>
-        </div> 
+    <div class="row fl" style="height: 70px;">
+        <div class="col cent">
+            <a href="https://www.facebook.com/profile.php?id=100008888882996"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="facebook" class="icon"></a>
+        </div>
+        <div class="col cent">
+            <a href="https://www.instagram.com/roybiplabofficial/"><img src="{{ url_for('static', filename='images/instagram-512.png') }}" alt="instagram" class="icon"></a>
+        </div>
+        <div class="col cent">
+            <a href="https://www.linkedin.com/in/biplab-roy-4b63b316a/"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="linkedin" class="icon"></a>
+        </div>
+    </div> 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -166,47 +151,3 @@
 </body>
 
 </html>
-<style>
-    body{
-        overflow-x: hidden;
-    }
-    .about {
-        font-size: larger;
-        font-family: cursive;
-        text-align: center;
-        font-style: bold;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    .textarea{
-        height: 150px;
-    }
-    .icon{
-        height: 50px;
-        width: 50px;
-        margin-top: 10px;
-    }
-    @media only screen and (max-width: 800px){
-        .icon{
-            height: 30px;
-            width: 30px;
-        }
-    }
-    .cent{
-        text-align: center;
-        font-size: large;
-        color: white;
-        font-weight: bold;
-    }
-    .contact{
-        text-align: center;
-        color: white;
-        font-size: large;
-        font-weight: bold;
-    }
-    .fl{
-        background-color: black;
-        opacity: 0.7;
-        text-align: center;
-    }
-</style>
