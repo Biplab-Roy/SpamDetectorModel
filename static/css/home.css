@@ -1,10 +1,11 @@
 
+
 body{
     overflow-x: hidden;
     background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     color: white;
 }
 .about {
