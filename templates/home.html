@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 
     <title>Welcome</title>
 </head>
@@ -17,13 +17,15 @@
 <body>
     <div class="row" style="height: 80vh;">
         <div class="col-sm-12 my-auto" style="text-align: center;">
-            <p class="about">
+            <p class="about text-white">
                 A simple spam message detector using NLP and Machine Learning. Now days most of us use Gmail, where this
                 technology is being used widely.
                 There are many more application for spam message detector. Natural language processing or NLP is
-                currently one of the major successful application areas for deep learning.<b style="color: coral;"> The model is embeded in
-                contact form. You can fill
-                up the contact form with dummy information.</b> Hit submit to see the result. Model has accuracy of 96.5% on
+                currently one of the major successful application areas for deep learning.<b style="color: coral;"> The
+                    model is embeded in
+                    contact form. You can fill
+                    up the contact form with dummy information.</b> Hit submit to see the result. Model has accuracy of
+                96.5% on
                 test data.
             </p>
         </div>
@@ -31,39 +33,39 @@
     <div class="row">
         <div class="col-md-6 my-auto" style="text-align: left;">
             <div class="container" style="padding: 0 20%;">
-                <h1>Technology</h1>
+                <h1 class="text-white">Technology</h1>
                 <br>
                 <h4 style="color: rgb(255, 0, 221);">NLP & ML</h4>
-                <ul>
+                <ul class="text-white">
                     <li>nltk (Text Processing) </li>
                     <li>Naive Bayes (ML algorithm) </li>
                     <li>Some more external library like pandas, numpy, sklearn</li>
                 </ul>
                 <br>
                 <h4 style="color: rgb(255, 0, 221);">Web Technology</h4>
-                <ul>
+                <ul class="text-white">
                     <li>Flask</li>
                 </ul>
                 <br>
                 <h4 style="color: rgb(255, 0, 221);">Others</h4>
-                <ul>
+                <ul class="text-white">
                     <li>Pickle (Connecting and Storing model)</li>
                 </ul>
             </div>
         </div>
         <div class="col-md-6 my-auto" style="text-align: left;">
             <div class="container" style="padding: 0 20%;">
-                <h1>Examples</h1>
+                <h1 class="text-white">Examples</h1>
                 <br>
                 <h4 style="color: red;">Spam</h4>
-                <ul>
+                <ul class="text-white">
                     <li>SIX chances to win CASH! </li>
                     <li>Free entry in 2 a wkly comp to win FA Cup final tkts </li>
                     <li>WINNER!! As a valued network customer you have been selected. </li>
                 </ul>
                 <br>
                 <h4 style="color: greenyellow;">Ham</h4>
-                <ul>
+                <ul class="text-white">
                     <li>Hello world...</li>
                     <li>Welcome to this website</li>
                     <li>Your password has been changed</li>
@@ -72,53 +74,70 @@
         </div>
     </div>
     <div class="row">
-        <div class="container" style="padding: 5%;">
-            <h2>Contact Us</h2>
-            <form method="POST" action="" class="contact-form">
-                {{ form.hidden_tag() }}
-                <div class="form-group">
-                    <h6>{{ form.name.label}}</h6>
-                    {% if form.name.errors %}
-                    {{ form.name(class = 'form-control is-invalid')  }}
-                    <div class="invalid-feedback">
-                        {% for error in form.name.errors %}
-                        <span>{{error}}</span>
-                        {% endfor %}
+        <div class="col-md-6">
+            <div class="container">
+                <div class="card" style="width:400px; margin: 10% auto;">
+                    <img class="card-img-top" src="{{ url_for('static',filename='images/dev.jpg') }}" alt="Card image"
+                        style="width:100%;">
+                    <div class="card-body">
+                        <h4 class="card-title">Biplab Roy</h4>
+                        <p class="card-text">"I am a student of Computer Science Engineering. I have interest on Machine Learning and
+                            android application development. As a student searching for some oppotunity to get into industry, looking for an internship. 
+                            For more projects by me visit github."</p>
+                        <a href="https://github.com/Biplab-Roy" class="btn btn-primary">Github Link</a>
                     </div>
-                    {% else %}
-                    {{ form.name(class = 'form-control')  }}
-                    {% endif %}
                 </div>
-                <div class="form-group">
-                    <h6>{{ form.email.label}}</h6>
-                    {% if form.email.errors %}
-                    {{ form.email(class = 'form-control is-invalid')  }}
-                    <div class="invalid-feedback">
-                        {% for error in form.email.errors %}
-                        <span>{{error}}</span>
-                        {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6" style="color: white;">
+            <div class="container" style="padding: 5%;">
+                <h2>Contact Us</h2>
+                <form method="POST" action="" class="contact-form">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <h6>{{ form.name.label}}</h6>
+                        {% if form.name.errors %}
+                        {{ form.name(class = 'form-control is-invalid')  }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                            <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.name(class = 'form-control')  }}
+                        {% endif %}
                     </div>
-                    {% else %}
-                    {{ form.email(class = 'form-control')  }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    <h6>{{ form.message.label }}</h6>
-                    {% if form.message.errors %}
-                    {{ form.message(class = 'form-control is-invalid textarea') }}
-                    <div class="invalid-feedback">
-                        {% for error in form.message.errors %}
-                        <span>{{error}}</span>
-                        {% endfor %}
+                    <div class="form-group">
+                        <h6>{{ form.email.label}}</h6>
+                        {% if form.email.errors %}
+                        {{ form.email(class = 'form-control is-invalid')  }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                            <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.email(class = 'form-control')  }}
+                        {% endif %}
                     </div>
-                    {% else %}
-                    {{ form.message(class = 'form-control textarea')  }}
-                    {% endif %}
-                </div>
-                <div class="form-submit">
-                    {{ form.submit(class = "btn btn-primary") }}
-                </div>
-            </form>
+                    <div class="form-group">
+                        <h6>{{ form.message.label }}</h6>
+                        {% if form.message.errors %}
+                        {{ form.message(class = 'form-control is-invalid textarea') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.message.errors %}
+                            <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.message(class = 'form-control textarea')  }}
+                        {% endif %}
+                    </div>
+                    <div class="form-submit">
+                        {{ form.submit(class = "btn btn-primary") }}
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <div class="row fl">
@@ -128,15 +147,18 @@
     </div>
     <div class="row fl" style="height: 70px;">
         <div class="col cent">
-            <a href="https://www.facebook.com/profile.php?id=100008888882996"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="facebook" class="icon"></a>
+            <a href="https://www.facebook.com/profile.php?id=100008888882996"><img
+                    src="{{ url_for('static', filename='images/facebook.png') }}" alt="facebook" class="icon"></a>
         </div>
         <div class="col cent">
-            <a href="https://www.instagram.com/roybiplabofficial/"><img src="{{ url_for('static', filename='images/instagram-512.png') }}" alt="instagram" class="icon"></a>
+            <a href="https://www.instagram.com/roybiplabofficial/"><img
+                    src="{{ url_for('static', filename='images/instagram-512.png') }}" alt="instagram" class="icon"></a>
         </div>
         <div class="col cent">
-            <a href="https://www.linkedin.com/in/biplab-roy-4b63b316a/"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="linkedin" class="icon"></a>
+            <a href="https://www.linkedin.com/in/biplab-roy-4b63b316a/"><img
+                    src="{{ url_for('static', filename='images/linkedin.png') }}" alt="linkedin" class="icon"></a>
         </div>
-    </div> 
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
