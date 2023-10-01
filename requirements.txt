@@ -3,7 +3,7 @@ gunicorn == 19.9.0
 Werkzeug == 2.2.3
 MarkupSafe >= 0.23
 Jinja2 == 2.11.3
-nltk == 3.5
+nltk == 3.6.6
 flask-wtf == 0.14.3
 email-validator == 1.1.1
 scikit-learn == 0.22.2
